@@ -1,0 +1,185 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Container */
+.projects-section {
+  
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  
+}
+
+.projects-section h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #00d4ff;
+  text-shadow: 1px 1px 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(241, 239, 239, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
+  margin-bottom: 20px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 212, 255, 0.2);
+}
+
+.project-card h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+
+.project-card p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+
+.tools-title {
+  color: #007acc; /* Change this to any color you like */
+}
+
+/* Button */
+.project-card button {
+  padding: 10px 18px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.project-card button:hover {
+  background-color: #0b0a23;
+}
+
+/* Expanded Project Detail */
+.project-detail {
+  
+  background: rgba(241, 239, 239, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.project-detail h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #1b01ac;
+}
+
+.project-detail ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.project-detail ul li {
+  margin-bottom: 6px;
+  color: whitesmoke;
+}
+
+/* Image Gallery */
+.project-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.project-images img {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-images {
+    justify-content: center;
+  }
+
+  .project-images img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Cursor pointer for images */
+.zoomable-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.zoomable-image:hover {
+  transform: scale(1.05);
+}
+
+/* Zoom Overlay Styles */
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.zoomed-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+
+/* Close button on top-right */
+.close-btn {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10000;
+  line-height: 1;
+  font-weight: bold;
+}

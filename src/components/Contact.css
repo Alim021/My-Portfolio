@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.contact-container {
+  /* background: #0b0a23; */
+  color: white;
+  padding: 20px 10px 20px;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form {
+  margin: 0 auto;
+}
+
+
+.contact-container h1 {
+ text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #00d4ff;
+  text-shadow: 1px 1px 10px rgba(0, 212, 255, 0.3);
+}
+.contact-description {
+    margin-right: 130px;
+  text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* responsive font */
+  color: #ccc;
+  margin: 0 auto 30px;
+  white-space: nowrap;
+}
+
+
+
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;     /* Center align horizontally */
+  gap: 15px;               /* Reduced vertical gap */
+  margin-bottom: 40px;     /* Slightly reduced bottom margin */
+}
+
+.info-box {
+  width: 100%;
+  max-width: 500px;         /* Limit width for better mobile look */
+  background: transparent;  /* Remove background box */
+  padding: 10px 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.05); /* Light hover effect */
+}
+
+
+.info-box img {
+  width: 80px;
+  height: 60px;
+}
+
+.info-box h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color:  #00d4ff;
+}
+
+.info-box p,
+.info-box a {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-form {
+  
+   background: rgba(241, 239, 239, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2  rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
+  max-width: 600px;
+  /* background: #fff; */
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+  /* color: #000; */
+  box-shadow: 0 12px 24px rgba(0, 212, 255, 0.2);
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #0b0a23;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 93%;
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color:  #00d4ff;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0b0a23;
+  color:#00d4ff;
+  border: 1px solid whitesmoke;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-box {
+    width: 100%;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+}
+
+
+.success-message {
+  color: green;
+  font-weight: 600;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+
+.info-box .icon {
+  font-size: 1.6rem;
+}
+
+.info-box:nth-child(1) .icon { color: red; } /* Email - blue */
+.info-box:nth-child(2) .icon { color: #07015f; } /* LinkedIn - LinkedIn blue */
+.info-box:nth-child(3) .icon { color: black; }    /* GitHub - dark */
+.info-box:nth-child(4) .icon { color: #28a745; } /* Phone - green */
+.info-box:nth-child(5) .icon { color: #c70404; } /* Location - tomato red */
+
+
+.icon {
+  display: inline-flex;
+  transition: none;
+  align-items: center;
+  justify-content: center;
+  width: 50px;       /* circle diameter */
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f9fafb; /* circle background */
+  color: white;               /* icon color */
+  font-size: 24px;            /* icon size */
+  flex-shrink: 0;             /* prevent shrinking */
+  transition: background-color 0.3s ease;
+}
+
+/* Optional: hover effect on info-box to change circle color */
+.info-box:hover .icon {
+  background-color: #f3f4f5;
+}

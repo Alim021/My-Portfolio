@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.skills-section {
+  padding: 2rem;
+  color: white;
+  /* background-color: #0a0a23; */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #00d4ff;
+  text-shadow: 1px 1px 10px rgba(0, 212, 255, 0.3); /* reduced gap below heading */
+}
+
+.bars {
+  width: 90%;
+  max-width: 600px;
+}
+
+.skill-bar {
+  margin: 1rem; /* reduced vertical spacing between bars */
+}
+
+.skill-bar span {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.bar-container {
+  background-color: gray;
+  border-radius: 25px;
+  position: relative;
+  height: 22px; /* slightly smaller bar height */
+  width: 100%;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: linear-gradient(to right, #0276a9, #386b9e);
+  height: 100%;
+  border-radius: 25px;
+}
+
+.bar-percent {
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.categories {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  /* Add one of the following: */
+  align-self: center;       /* Option 1 */
+  /* OR */
+        /* Option 2 */
+  margin-right: 130px;
+}
+
+.category h3 {
+  color: #00d4ff;
+  margin-bottom: 0.3rem;
+  margin-left: 130px;
+}
+
+.category p {
+  line-height: 1.4;
+  margin: 0;
+  margin-left: 130px;
+}
