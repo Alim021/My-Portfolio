@@ -6,9 +6,9 @@ import './Projects.css';
 
 import naukri1 from '../assets/naukri1.png';
 
-import naukri2 from '../assets/naukri2.png';
+import naukri2 from '../assets/naukri3.png';
 
-import naukri3 from '../assets/naukri3.png';
+import naukri3 from '../assets/naukri2.png';
 import naukri4 from '../assets/naukri4.png';
 
 import M1 from '../assets/M1.jpg';
