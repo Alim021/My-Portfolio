@@ -29,17 +29,15 @@ body {
   color: #00d4ff;
   text-shadow: 1px 1px 10px rgba(0, 212, 255, 0.3);
 }
+
 .contact-description {
   text-align: center;
-  font-size: clamp(0.75rem, 1.5vw, 1rem); /* smaller size for all screens */
+  font-size: clamp(0.8rem, 2vw, 1rem); /* Responsive and smaller */
   color: #ccc;
   margin: 0 auto 30px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; /* optional if text exceeds width */
-  max-width: 90%; /* ensures it fits within screen width */
+  max-width: 90%;
+  line-height: 1.4;
 }
-
 
 
 .contact-info {
