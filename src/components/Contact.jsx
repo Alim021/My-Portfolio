@@ -38,9 +38,7 @@ const Contact = () => {
       <div className="contact-wrapper">
         <h1>Contact Me</h1>
         <p className="contact-description">
-          "Feel free to reach out to me for any questions, project
-          collaborations, or career opportunities. I’m here to help and
-          connect!"
+          "Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
         </p>
 
         
