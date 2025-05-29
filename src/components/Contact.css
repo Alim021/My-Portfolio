@@ -22,7 +22,6 @@ body {
 
 
 .contact-container h1 {
-display: flex;
  text-align: center;
   font-size: 3rem;
   font-weight: bold;
@@ -31,6 +30,7 @@ display: flex;
   text-shadow: 1px 1px 10px rgba(0, 212, 255, 0.3);
 }
 .contact-description {
+display: flex;
     margin-right: 130px;
   text-align: center;
   font-size: clamp(0.9rem, 2vw, 1.1rem); /* responsive font */
