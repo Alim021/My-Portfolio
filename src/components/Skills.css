@@ -24,7 +24,7 @@ h2 {text-align: center;
   text-shadow: 1px 1px 10px rgba(0, 212, 255, 0.3); /* reduced gap below heading */
 }
 
-.bars {
+.bars { 
   width: 90%;
   max-width: 600px;
 }
