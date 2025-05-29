@@ -30,13 +30,14 @@ body {
   text-shadow: 1px 1px 10px rgba(0, 212, 255, 0.3);
 }
 .contact-description {
-display: flex;
-    margin-right: 130px;
   text-align: center;
-  font-size: clamp(0.9rem, 2vw, 1.1rem); /* responsive font */
+  font-size: clamp(0.75rem, 1.5vw, 1rem); /* smaller size for all screens */
   color: #ccc;
   margin: 0 auto 30px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* optional if text exceeds width */
+  max-width: 90%; /* ensures it fits within screen width */
 }
 
 
