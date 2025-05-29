@@ -73,7 +73,7 @@ h2 {text-align: center;
   gap: 1rem;
 
   /* Add one of the following: */
-  align-self: center;       /* Option 1 */
+  align-item: center;       /* Option 1 */
   /* OR */
         /* Option 2 */
   margin-right: 130px;
