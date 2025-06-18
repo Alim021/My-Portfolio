@@ -16,22 +16,37 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const WEBHOOK_URL = "https://discord.com/api/webhooks/1384949557770846278/d7l5rjDY8LkKZckM2uE9yf23vhVft6tU5MbfEGIHi6GiUAwnEVKF8mNsqf2gGENZEzFf"; // replace with your actual webhook
 
-    // You can add your form submission logic here (e.g., API call)
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Show success message
+  const { name, email, message } = formData;
+
+  // Format message
+  const content = `📩 **New Contact Form Submission**\n\n👤 **Name**: ${name}\n📧 **Email**: ${email}\n📝 **Message**: ${message}`;
+
+  try {
+    await fetch(WEBHOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ content }),
+    });
+
+    // Success message
     setSuccessMessage("Sent Message Successfully");
-
-    // Clear form fields
     setFormData({ name: "", email: "", message: "" });
 
-    // Hide message after 3 seconds
-    setTimeout(() => {
-      setSuccessMessage("");
-    }, 3000);
-  };
+    setTimeout(() => setSuccessMessage(""), 3000);
+  } catch (error) {
+    console.error("Webhook Error:", error);
+    setSuccessMessage("❌ Failed to send message. Try again.");
+    setTimeout(() => setSuccessMessage(""), 3000);
+  }
+};
+
 
   return (
     <div className="contact-container">
