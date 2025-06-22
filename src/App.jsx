@@ -5,13 +5,13 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import FloatingContact from './FloatingContact'; // ✅ Updated import
 import './App.css'; // Optional: for global styles if needed
 
 export default function App() {
   return (
     <Router>
-
-    {/* 🔵 React Icon from CDN with transparent background */}
+      {/* 🔵 React Icon from CDN with transparent background */}
       <div className="react-icon-container">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
@@ -40,6 +40,9 @@ export default function App() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      {/* ✅ Floating contact icon - bottom right on all pages */}
+      <FloatingContact />
     </Router>
   );
 }

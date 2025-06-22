@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import profileImage from '../assets/IMG1.jpg';
+import profileImage from '../assets/IMG2.jpg';
  // Replace with your actual image path
 
 export default function Home() {

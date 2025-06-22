@@ -58,3 +58,108 @@ remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
 To https://github.com/Alim021/Personal_Portfolio.git
    92ef598..e18bb0a  main -> main
 PS C:\Users\alim1\Downloads\My Project> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users\alim1\Downloads\My Project> git init
+Reinitialized existing Git repository in C:/Users/alim1/Downloads/My Project/.git/
+PS C:\Users\alim1\Downloads\My Project> git add .
+PS C:\Users\alim1\Downloads\My Project> git commit -m "initial commit" 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\alim1\Downloads\My Project> git branch -M main
+PS C:\Users\alim1\Downloads\My Project> git remote add origin https://github.com/Alim021/Personal_Portfolio.git
+error: remote origin already exists.
+PS C:\Users\alim1\Downloads\My Project> git push -u origin main
+remote: Repository not found.
+fatal: repository 'https://github.com/Alim021/My-Portfolio.git/' not found
+PS C:\Users\alim1\Downloads\My Project> git branch * main
+PS C:\Users\alim1\Downloads\My Project> git remote -v
+origin  https://github.com/Alim021/My-Portfolio.git (fetch)
+origin  https://github.com/Alim021/My-Portfolio.git (push)
+PS C:\Users\alim1\Downloads\My Project> git remote set-url origin https://github.com/Alim021/Personal_Portfolio.git
+PS C:\Users\alim1\Downloads\My Project> git remote -v
+origin  https://github.com/Alim021/Personal_Portfolio.git (fetch)
+origin  https://github.com/Alim021/Personal_Portfolio.git (push)
+PS C:\Users\alim1\Downloads\My Project> git push -u origin main
+Enumerating objects: 43, done.
+
+added 4 packages, and audited 159 packages in 2s
+
+33 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\alim1\Downloads\My Project> git init
+Reinitialized existing Git repository in C:/Users/alim1/Downloads/My Project/.git/
+PS C:\Users\alim1\Downloads\My Project> git add .
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\alim1\Downloads\My Project> git commit -m "Install React Router dom"
+[main e18bb0a] Install React Router dom
+ 2 files changed, 57 insertions(+), 2 deletions(-)
+PS C:\Users\alim1\Downloads\My Project> git push  origin main  
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.03 KiB | 1.03 MiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/Alim021/Personal_Portfolio.git
+   92ef598..e18bb0a  main -> main
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\alim1\Downloads\My Project> git commit -m "Install React Router dom"
+[main e18bb0a] Install React Router dom
+ 2 files changed, 57 insertions(+), 2 deletions(-)
+PS C:\Users\alim1\Downloads\My Project> git push  origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.03 KiB | 1.03 MiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/Alim021/Personal_Portfolio.git
+   92ef598..e18bb0a  main -> main
+PS C:\Users\alim1\Downloads\My Project>
+

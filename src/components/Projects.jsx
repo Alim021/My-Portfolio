@@ -3,12 +3,9 @@ import React, { useState } from 'react';
 import './Projects.css';
 
 // Naukri Project Images
-
 import naukri1 from '../assets/naukri1.png';
-
-import naukri2 from '../assets/naukri3.png';
-
-import naukri3 from '../assets/naukri2.png';
+import naukri2 from '../assets/naukri2.png';
+import naukri3 from '../assets/naukri3.png';
 import naukri4 from '../assets/naukri4.png';
 
 import M1 from '../assets/M1.jpg';
@@ -22,7 +19,7 @@ import M8 from '../assets/M8.jpg';
 
 export default function Projects() {
   const [expandedProject, setExpandedProject] = useState(null);
-  const [zoomedImg, setZoomedImg] = useState(null); // For zoomed image URL
+  const [zoomedImg, setZoomedImg] = useState(null);
 
   const toggleProject = (projectName) => {
     setExpandedProject(prev => (prev === projectName ? null : projectName));
@@ -43,19 +40,25 @@ export default function Projects() {
       {/* Naukri.com Clone */}
       <div className="project-card">
         <h2>Naukri.Com Clone</h2>
-        <p>
-          <strong className="tools-title">Tools & Technologies :</strong> HTML5, CSS, ES5, NoSQL Workbench
-        </p>
+        <p><strong className="tools-title">Tools & Technologies :</strong> HTML5, CSS, ES5, NoSQL Workbench</p>
         <p>A job portal with features like Naukri.com to help users find and apply for jobs online easily.</p>
-        <button onClick={() => toggleProject('naukri')}>
-          {expandedProject === 'naukri' ? 'Hide Details' : 'View More Details'}
-        </button>
+
+        <div className="button-row">
+          <button onClick={() => toggleProject('naukri')}>
+            {expandedProject === 'naukri' ? 'Hide Details' : 'View More Details'}
+          </button>
+          <a href="https://online-job-service.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <button className="view-online">View Online</button>
+          </a>
+        </div>
 
         {expandedProject === 'naukri' && (
           <div className="project-detail">
             <h3>Project Overview:</h3>
             <p>
-             Developed as a final year project, this job portal clone helps job seekers and employers connect. Built with HTML5, CSS, and ES5 for frontend and NoSQL Workbench for backend, the platform allows users to create profiles, search jobs, and manage applications
+              Developed as a final year project, this job portal clone helps job seekers and employers connect.
+              Built with HTML5, CSS, and ES5 for frontend and NoSQL Workbench for backend, the platform allows
+              users to create profiles, search jobs, and manage applications.
             </p>
 
             <h3>Key Features:</h3>
@@ -85,19 +88,26 @@ export default function Projects() {
       {/* Meeting App */}
       <div className="project-card">
         <h2>Meeting App With Transcription</h2>
-        <p>
-          <strong className="tools-title">Tools & Technologies :</strong>  Jitsi Meet, VOSK Server, Nginx, Prosody, Jicofo, Jigasi, Jibri, JavaScript, REST APIs
-        </p>
+        <p><strong className="tools-title">Tools & Technologies :</strong> Jitsi Meet, VOSK Server, Nginx, Prosody, Jicofo, Jigasi, Jibri, JavaScript, REST APIs</p>
         <p>Conduct secure meetings with real-time transcription and summarization.</p>
-        <button onClick={() => toggleProject('meeting')}>
-          {expandedProject === 'meeting' ? 'Hide Details' : 'View More Details'}
-        </button>
+
+        <div className="button-row">
+          <button onClick={() => toggleProject('meeting')}>
+            {expandedProject === 'meeting' ? 'Hide Details' : 'View More Details'}
+          </button>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <button className="view-online">View Online</button>
+          </a>
+        </div>
 
         {expandedProject === 'meeting' && (
           <div className="project-detail">
             <h3>Project Overview:</h3>
             <p>
-              Developed a video conferencing app using Jitsi and VOSK for real-time transcription. Configured all core components (Jitsi Meet, Videobridge, Jicofo, Jigasi, Jibri) on Ubuntu server with Nginx. Integrated REST APIs for auto-summarization and deployed a secure, functional meeting platform.            </p>
+              Developed a video conferencing app using Jitsi and VOSK for real-time transcription.
+              Configured all core components (Jitsi Meet, Videobridge, Jicofo, Jigasi, Jibri) on Ubuntu server with Nginx.
+              Integrated REST APIs for auto-summarization and deployed a secure, functional meeting platform.
+            </p>
 
             <h3>Key Features:</h3>
             <ul>
@@ -105,7 +115,7 @@ export default function Projects() {
               <li>Meeting summary generation</li>
               <li>Secure login system</li>
               <li>Jitsi integration with custom UI</li>
-              <li>Live subtitles during video meetings using real-time speech-to-text.</li>
+              <li>Live subtitles during video meetings using real-time speech-to-text</li>
             </ul>
 
             <div className="project-images">
