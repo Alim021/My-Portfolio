@@ -44,6 +44,7 @@ body {
   font-weight: 700;
   font-size: 28px;
   background: linear-gradient(90deg, #12d400, #e91e63);
+  -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
   cursor: pointer;
   transition: background-position 0.3s ease;
