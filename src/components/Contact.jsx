@@ -6,47 +6,65 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
+    phone: "",
     email: "",
     message: "",
   });
+
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // ✅ Only allow numbers and max 10 digits for phone
+    if (name === "phone") {
+      const cleaned = value.replace(/\D/g, ""); // remove non-digits
+      if (cleaned.length <= 10) {
+        setFormData((prev) => ({ ...prev, [name]: cleaned }));
+      }
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
-  const WEBHOOK_URL = "https://discord.com/api/webhooks/1384949557770846278/d7l5rjDY8LkKZckM2uE9yf23vhVft6tU5MbfEGIHi6GiUAwnEVKF8mNsqf2gGENZEzFf"; // replace with your actual webhook
+  const WEBHOOK_URL = "https://discord.com/api/webhooks/1384949557770846278/d7l5rjDY8LkKZckM2uE9yf23vhVft6tU5MbfEGIHi6GiUAwnEVKF8mNsqf2gGENZEzFf";
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const { name, email, message } = formData;
+    const { name, phone, email, message } = formData;
 
-  // Format message
-  const content = `📩 **New Contact Form Submission**\n\n👤 **Name**: ${name}\n📧 **Email**: ${email}\n📝 **Message**: ${message}`;
+    if (phone.length !== 10) {
+      setSuccessMessage("❌ Mobile number must be exactly 10 digits.");
+      setTimeout(() => setSuccessMessage(""), 3000);
+      return;
+    }
 
-  try {
-    await fetch(WEBHOOK_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ content }),
-    });
+    const content = `📩 **New Contact Form Submission**
+👤 **Name**: ${name}
+📱 **Mobile**: ${phone}
+📧 **Email**: ${email}
+📝 **Message**: ${message}`;
 
-    // Success message
-    setSuccessMessage("Sent Message Successfully");
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content }),
+      });
 
-    setTimeout(() => setSuccessMessage(""), 3000);
-  } catch (error) {
-    console.error("Webhook Error:", error);
-    setSuccessMessage("❌ Failed to send message. Try again.");
-    setTimeout(() => setSuccessMessage(""), 3000);
-  }
-};
+      setSuccessMessage("✅ Sent Message Successfully");
+      setFormData({ name: "", phone: "", email: "", message: "" });
 
+      setTimeout(() => setSuccessMessage(""), 3000);
+    } catch (error) {
+      console.error("Webhook Error:", error);
+      setSuccessMessage("❌ Failed to send message. Try again.");
+      setTimeout(() => setSuccessMessage(""), 3000);
+    }
+  };
 
   return (
     <div className="contact-container">
@@ -56,7 +74,6 @@ const handleSubmit = async (e) => {
           "Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
         </p>
 
-        
         <div className="contact-info">
           <div className="info-box">
             <MdEmail className="icon" />
@@ -113,6 +130,7 @@ const handleSubmit = async (e) => {
 
         <form className="contact-form" onSubmit={handleSubmit}>
           <h2>Send Message</h2>
+
           <div className="input-group">
             <input
               type="text"
@@ -123,6 +141,20 @@ const handleSubmit = async (e) => {
               required
             />
           </div>
+
+          <div className="input-group">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Mobile Number"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              maxLength="10"
+              inputMode="numeric"
+            />
+          </div>
+
           <div className="input-group">
             <input
               type="email"
@@ -133,19 +165,19 @@ const handleSubmit = async (e) => {
               required
             />
           </div>
+
           <div className="input-group">
             <textarea
               name="message"
               placeholder="Type your Message..."
-              // rows="4"
               value={formData.message}
               onChange={handleChange}
               required
             />
           </div>
+
           <button type="submit">Send</button>
 
-          {/* Success Message */}
           {successMessage && (
             <p className="success-message">{successMessage}</p>
           )}
