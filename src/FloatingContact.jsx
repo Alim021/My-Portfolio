@@ -16,7 +16,7 @@ export default function FloatingContact() {
             <FaPhone />
           </a>
           <a
-            href="https://wa.me/9309599402"
+            href="https://wa.me/919309599402"
             target="_blank"
             rel="noopener noreferrer"
             className="icon whatsapp"
