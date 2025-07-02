@@ -48,7 +48,7 @@ export default function Projects() {
             {expandedProject === 'naukri' ? 'Hide Details' : 'View More Details'}
           </button>
           <a href="https://online-job-service.netlify.app/" target="_blank" rel="noopener noreferrer">
-            <button className="view-online">View Online</button>
+            <button className="view-online">Live Demo</button>
           </a>
         </div>
 
@@ -96,7 +96,7 @@ export default function Projects() {
             {expandedProject === 'meeting' ? 'Hide Details' : 'View More Details'}
           </button>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <button className="view-online">View Online</button>
+            <button className="view-online">Live Demo</button>
           </a>
         </div>
 
