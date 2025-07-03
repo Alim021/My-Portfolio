@@ -11,7 +11,7 @@ export default function Home() {
 
       <div className="home-content">
         <div className="home-text">
-          <h1><span className="blue">Web Developer</span></h1>
+          <h1><span className="blue">Full-Stack Developer</span></h1>
           <p>
             Hi, I'm <span className="name">Alim Sayyad</span>, a passionate Full-Stack Developer with a strong interest in Front-End and Back-End Development. I completed my Bachelor's degree in Computer Science (BCS) from Abeda Inamdar Senior College, Pune, and I am currently pursuing a Master’s degree in Computer Science (MCS) from the same college.
           </p>
